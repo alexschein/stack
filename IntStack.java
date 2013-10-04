@@ -1,6 +1,9 @@
+import java.util.Random;
+
 public class IntStack {
     int[] stack;
     int top;
+    int ran = new Random();
 
     public IntStack(int size) {
 	top=0;
@@ -12,6 +15,10 @@ public class IntStack {
 
     void push(int num) {
 	stack[top++]=num;
+    }
+
+    int peek(int depth) {
+	
     }
 
     void pop() {
