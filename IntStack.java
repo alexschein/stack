@@ -5,6 +5,7 @@ public class IntStack {
     public IntStack(int size) {
 	top=0;
 	stack = new int[size];//make size that your stack can be--takes in param
+    }
 
     boolean isEmpty() {
 	return top==0;
@@ -14,11 +15,11 @@ public class IntStack {
 	stack[top++]=num;
     }
 
-    void pop() {
+    int pop() {
 	return stack[--top];//
     }
 
-    void peek() {
+    int peek() {
 	return stack[top-1];//show the top spot
     }
    
