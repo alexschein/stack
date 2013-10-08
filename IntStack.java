@@ -41,10 +41,18 @@ public class IntStack {
     int peek() {
 	return stack[top-1];//show the top spot
     }
-  
+   
+    /*
+     *author: Emma
+     */
+    void sortdescending() {
+	Arrays.sort(stack, 0, top);
+    }
+
     public static void main(String[] args) {
 	IntStack is = new IntStack(10);
 	is.push(4);
+	is.push(6);
 	is.push(5);
 	is.push(6);
 	int output = is.pop();
@@ -56,5 +64,13 @@ public class IntStack {
 	is.push(1);
 	int[] outputall = is.popAll();
 	System.out.println(Arrays.toString(outputall));
+
+	/*tests for sort fucntions*/
+	is.sortdescending();
+	while(!is.isEmpty() )
+	    {
+		int output = is.pop();
+		System.out.println(output);
+	    }
     }
  }
