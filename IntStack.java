@@ -95,7 +95,6 @@ public class IntStack {
 	//this is the test for peek of the stack:
 	int test = is.ranPeek();
 	System.out.println("test of peek at random depth: " + test);
-    }
 
 	//tests for popall:
 	is.push(3);
@@ -108,10 +107,9 @@ public class IntStack {
 	//	is.sortdescending();
 	
 	is.sortascending();
-	while(!is.isEmpty() )
-	    {
-		int output = is.pop();
+	while(!is.isEmpty()){
+		output = is.pop();
 		System.out.println(output);
-	    }
+	}
     }
  }
