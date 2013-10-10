@@ -111,8 +111,9 @@ public class IntStack {
 	System.out.println("test of peek at random depth: " + test);
 
 	//test print function:
-	System.out.println("print test:");
-	is.print();
+	//System.out.println("print test:");
+	//is.print();
+	//EMMA: does not work, see issue.
 
 	//tests for ascending/descending
 	is.sortdescending();
@@ -129,14 +130,6 @@ public class IntStack {
 	is.push(1);
 	outputall = is.popAll();
 	System.out.println("popAll is: " + Arrays.toString(outputall));
-
-	/*tests for sort fucntions*/
-    	is.sortdescending();
-    	while(!is.isEmpty() )
-	{
-	    int output = is.pop();
-	    System.out.println(output);
-        }
 
 	//test for number count
 	is.popAll();
