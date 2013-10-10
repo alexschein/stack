@@ -1,5 +1,4 @@
 import java.util.Arrays;
-//import java.util.Collections;
 
 public class IntStack {
     int[] stack;
@@ -30,7 +29,27 @@ public class IntStack {
      *author: Emma
      */
     void sortdescending() {
+	//make the descending stack:
+	int[] descending = new int[stack.length];
+	
+	//sort the stack
 	Arrays.sort(stack, 0, top);
+    }
+     
+    void sortascending() {
+	//create a temporary array:
+	int[] ascending = new int[stack.length];
+
+	//sort in descending order:
+	sortdescending();
+
+	//put into the ascending array in reverse:
+	for (int i=0; i<stack.length; i++){
+	    ascending[i] = stack[stack.length - i];
+	}
+
+	//set stack to be that array:
+	stack = ascending;
     }
 
     public static void main(String[] args) {
@@ -40,7 +59,9 @@ public class IntStack {
 	is.push(5);
 
 	/*tests for sort fucntions*/
-	is.sortdescending();
+	//	is.sortdescending();
+	
+	is.sortascending();
 	while(!is.isEmpty() )
 	    {
 		int output = is.pop();
