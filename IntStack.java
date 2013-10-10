@@ -20,6 +20,12 @@ public class IntStack {
 	stack[top++]=num;
     }
 
+    //random push by lindsay
+    void pushRandom(int ran){
+	ran = gen.nextInt(9);
+	stack[top++]=ran; //put random numbers into the stack 
+    }
+
     //peak at a random depth
     //alexschein
      int ranPeek() {
@@ -31,7 +37,7 @@ public class IntStack {
     }
     
      int pop() {
-	return stack[--top];//
+	return stack[--top];
     }
 
     //Author: Anna Hirschorn
@@ -72,6 +78,12 @@ public class IntStack {
     //	Arrays.sort(stack, 0, top);
     // }
 
+    void print(){
+	System.out.println(stack[top]); 
+	System.out.println(stack[top-1]); 
+	System.out.println(stack[top-2]); //printing spots in the stacks
+    }
+
     public static void main(String[] args) {
 	//	int num = Integer.parseInt(args[0]);
 
@@ -86,7 +98,10 @@ public class IntStack {
 	int test = is.ranPeek();
 	System.out.println("test of peek at random depth: " + test);
 
-	
+	//test print function:
+	System.out.println("print test:");
+	is.print();
+
 	//tests for popall:
 	is.push(3);
 	is.push(2);
