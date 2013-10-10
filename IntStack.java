@@ -51,6 +51,16 @@ public class IntStack {
         return result;
     }
 
+    //counts the number of number given in the int stack
+    //Anna Hirschorn
+    int count = 0;
+    int numberCount(int num){
+	for(int i=0; i<=top; i++){
+	    if(stack[i]==num) count++;
+	}
+	return count;
+    }
+
     int peek() {
 	return stack[top-1];//show the top spot
     }
@@ -58,9 +68,9 @@ public class IntStack {
     /*
      *author: Emma
      */
-    void sortdescending() {
-	Arrays.sort(stack, 0, top);
-    }
+    // void sortdescending() {
+    //	Arrays.sort(stack, 0, top);
+    // }
 
     public static void main(String[] args) {
 	//	int num = Integer.parseInt(args[0]);
@@ -75,8 +85,8 @@ public class IntStack {
 	//this is the test for peek of the stack:
 	int test = is.ranPeek();
 	System.out.println("test of peek at random depth: " + test);
-    }
 
+	
 	//tests for popall:
 	is.push(3);
 	is.push(2);
@@ -85,11 +95,21 @@ public class IntStack {
 	System.out.println(Arrays.toString(outputall));
 
 	/*tests for sort fucntions*/
-	is.sortdescending();
-	while(!is.isEmpty() )
-	    {
-		int output = is.pop();
-		System.out.println(output);
-	    }
+    	is.sortdescending();
+    	while(!is.isEmpty() )
+	{
+	    int output = is.pop();
+	    System.out.println(output);
+        }
+
+	//test for number count
+	is.popAll();
+	is.push(1);
+	is.push(1);
+	is.push(1);
+	is.push(2);
+	is.push(4);
+	int one = is.numberCount(1);
+	System.out.println(one); //should print out 3 (yay it works!)
     }
  }
