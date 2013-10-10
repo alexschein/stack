@@ -59,9 +59,6 @@ public class IntStack {
      *author: Emma
      */
     void sortdescending() {
-	//make the descending stack:
-	int[] descending = new int[stack.length];
-	
 	//sort the stack
 	Arrays.sort(stack, 0, top);
     }
@@ -74,8 +71,8 @@ public class IntStack {
 	sortdescending();
 
 	//put into the ascending array in reverse:
-	for (int i=0; i<stack.length; i++){
-	    ascending[i] = stack[stack.length - i];
+	for (int i=0; i<top; i++){
+	    ascending[i] = stack[(top - 1) - i];
 	}
 
 	//set stack to be that array:
@@ -86,6 +83,7 @@ public class IntStack {
 	//	int num = Integer.parseInt(args[0]);
 
 	IntStack is = new IntStack(10);
+	Random gen = new Random();
 	//fill the array with ints at each spot
 	is.push(4);is.push(5);is.push(6);is.push(7);is.push(8);
 	is.push(9);is.push(10);
@@ -96,20 +94,30 @@ public class IntStack {
 	int test = is.ranPeek();
 	System.out.println("test of peek at random depth: " + test);
 
+	//tests for ascending/descending
+	is.sortdescending();
+	int [] outputall = is.popAll();
+	System.out.println("descending is: " + Arrays.toString(outputall));
+	for(int i=0; i<8; i++) { is.push(gen.nextInt(40)); }
+	is.sortascending();
+	outputall = is.popAll();
+	System.out.println("ascending is: " + Arrays.toString(outputall));
+	
 	//tests for popall:
 	is.push(3);
 	is.push(2);
 	is.push(1);
-	int[] outputall = is.popAll();
-	System.out.println(Arrays.toString(outputall));
+	outputall = is.popAll();
+	System.out.println("popAll is: " + Arrays.toString(outputall));
 
 	/*tests for sort fucntions*/
 	//	is.sortdescending();
 	
-	is.sortascending();
-	while(!is.isEmpty()){
-		output = is.pop();
-		System.out.println(output);
-	}
+	//	is.sortascending();
+	//	while(!is.isEmpty()){
+	//   is.sortascending();
+	//  output = is.pop();
+	//  System.out.println(output);
+	    //	}
     }
  }
