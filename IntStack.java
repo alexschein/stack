@@ -20,6 +20,12 @@ public class IntStack {
 	stack[top++]=num;
     }
 
+    //random push by lindsay
+    void pushRandom(int ran){
+	ran = gen.nextInt(9);
+	stack[top++]=ran; //put random numbers into the stack 
+    }
+
     //peak at a random depth
     //alexschein
      int ranPeek() {
@@ -31,7 +37,7 @@ public class IntStack {
     }
     
      int pop() {
-	return stack[--top];//
+	return stack[--top];
     }
 
     //Author: Anna Hirschorn
@@ -49,6 +55,16 @@ public class IntStack {
         System.arraycopy(a, 0, result, 0, a.length);
         System.arraycopy(b, 0, result, a.length, b.length);
         return result;
+    }
+
+    //counts the number of number given in the int stack
+    //Anna Hirschorn
+    int count = 0;
+    int numberCount(int num){
+	for(int i=0; i<=top; i++){
+	    if(stack[i]==num) count++;
+	}
+	return count;
     }
 
     int peek() {
@@ -94,6 +110,10 @@ public class IntStack {
 	int test = is.ranPeek();
 	System.out.println("test of peek at random depth: " + test);
 
+	//test print function:
+	System.out.println("print test:");
+	is.print();
+
 	//tests for ascending/descending
 	is.sortdescending();
 	int [] outputall = is.popAll();
@@ -111,13 +131,21 @@ public class IntStack {
 	System.out.println("popAll is: " + Arrays.toString(outputall));
 
 	/*tests for sort fucntions*/
-	//	is.sortdescending();
-	
-	//	is.sortascending();
-	//	while(!is.isEmpty()){
-	//   is.sortascending();
-	//  output = is.pop();
-	//  System.out.println(output);
-	    //	}
+    	is.sortdescending();
+    	while(!is.isEmpty() )
+	{
+	    int output = is.pop();
+	    System.out.println(output);
+        }
+
+	//test for number count
+	is.popAll();
+	is.push(1);
+	is.push(1);
+	is.push(1);
+	is.push(2);
+	is.push(4);
+	int one = is.numberCount(1);
+	System.out.println(one); //should print out 3 (yay it works!)
     }
  }
