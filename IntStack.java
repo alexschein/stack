@@ -1,5 +1,4 @@
 import java.util.Random;
-
 import java.util.Arrays;
 
 public class IntStack {
@@ -40,6 +39,8 @@ public class IntStack {
 	if(isEmpty()) return new int[] {};
 	return combine(new int[]{pop()}, popAll());
     }
+
+    
     
     //combine method used in popall
     /*from javarevisted online*/
@@ -62,27 +63,31 @@ public class IntStack {
 	Arrays.sort(stack, 0, top);
     }
 
+    //reverse the array in a backwards order
+    int[] reverse(int[] stack) {
+	//make the array that will have the reversed array of stack array
+	int[] backwards = new int[stack.length];
+
+	//fill it
+	for(int i = stack.length-1; i >= 0; i--) {
+	    backwards[(stack.length-1)-i] = stack[i];
+	}
+	
+	return backwards;//send out the reversed array
+    }
+
     public static void main(String[] args) {
-	//	int num = Integer.parseInt(args[0]);
 
 	IntStack is = new IntStack(10);
-	//fill the array with ints at each spot
-	is.push(4);is.push(5);is.push(6);is.push(7);is.push(8);
-	is.push(9);is.push(10);
-	int output = is.pop();
-      	System.out.println(output);
      
 	//this is the test for peek of the stack:
 	int test = is.ranPeek();
 	System.out.println("test of peek at random depth: " + test);
-    }
 
-	//tests for popall:
-	is.push(3);
-	is.push(2);
-	is.push(1);
-	int[] outputall = is.popAll();
-	System.out.println(Arrays.toString(outputall));
+	System.out.println("the array: " + is);
+	//test for reverse
+	//     int test2 = is.reverse(stack);
+	//	System.out.println("reverse: " + test2);
 
 	/*tests for sort fucntions*/
 	is.sortdescending();
@@ -91,5 +96,12 @@ public class IntStack {
 		int output = is.pop();
 		System.out.println(output);
 	    }
+
+	//tests for popall:
+	is.push(3);
+	is.push(2);
+	is.push(1);
+	int[] outputall = is.popAll();
+       	System.out.println(Arrays.toString(outputall));
     }
- }
+}
