@@ -70,6 +70,14 @@ public class IntStack {
     int peek() {
 	return stack[top-1];//show the top spot
     }
+
+    //prints all the numbers in the stack and their positions
+    //Anna Hirschorn and Lindsay Jadow
+    void posprinter(){
+	for(int i=0; i<=top; i++){
+	    System.out.println("Position "+i+": "+stack[i]);
+	}
+    }
    
     /*
      *author: Emma
@@ -138,7 +146,13 @@ public class IntStack {
 	is.push(1);
 	is.push(2);
 	is.push(4);
-	int one = is.numberCount(1);
-	System.out.println(one); //should print out 3 (yay it works!)
+	int num = 1;
+	int one = is.numberCount(num);
+	System.out.println("Number of "+num+"'s: "+ one); //should print out 3 (yay it works!)
+
+	//test for posprinter 
+	is.posprinter();
+
+
     }
  }
