@@ -78,7 +78,9 @@ public class IntStack {
 	//sort the stack
 	Arrays.sort(stack, 0, top);
     }
-     
+    /*
+     *author: Emma
+     */ 
     void sortascending() {
 	//create a temporary array:
 	int[] ascending = new int[stack.length];
@@ -95,6 +97,10 @@ public class IntStack {
 	stack = ascending;
     }
 
+    String printstack() {
+	return Arrays.toString(stack);
+    }
+
     public static void main(String[] args) {
 	//	int num = Integer.parseInt(args[0]);
 
@@ -106,6 +112,9 @@ public class IntStack {
 	int output = is.pop();
       	System.out.println(output);
      
+	//this is the test for printstack:
+	System.out.println("116: The stack is: " + is.printstack());
+
 	//this is the test for peek of the stack:
 	int test = is.ranPeek();
 	System.out.println("test of peek at random depth: " + test);
