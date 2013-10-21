@@ -21,14 +21,10 @@ public class stackTester {
 	int test = is.ranPeek();
 	System.out.println("test of peek at random depth: " + test);
 
-	//test print function:
-	//System.out.println("print test:");
-	//is.print();
-	//EMMA: does not work, see issue.
-
 	//test for reverse
         int[] test2 = is.reverse();
       	System.out.println("reverse: " + Arrays.toString(test2));
+	
 	//tests for ascending/descending
 	is.sortdescending();
 	int [] outputall = is.popAll();
@@ -45,6 +41,12 @@ public class stackTester {
 	outputall = is.popAll();
 	System.out.println("popAll is: " + Arrays.toString(outputall));
 
+	//tests for print:
+	is.push(3);
+        is.push(2);
+	is.push(1);
+	is.print();
+
 	/*tests for sort fucntions*/
 	is.sortdescending();
 	while(!is.isEmpty() )
@@ -58,7 +60,8 @@ public class stackTester {
 	is.push(2);
 	is.push(1);
 	int[] outputall2 = is.popAll();
-       	System.out.println(Arrays.toString(outputall2));
+
+
 	//test for number count
 	is.popAll();
 	is.push(1);

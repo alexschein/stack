@@ -114,10 +114,10 @@ public class IntStack {
 	return backwards;//send out the reversed array
     }//close reverse
 
+    //author: Emma 
+    //print the array (call after running all functions)
     void print(){
-	System.out.println(stack[top]); 
-	System.out.println(stack[top-1]); 
-	System.out.println(stack[top-2]); //printing spots in the stacks
+	System.out.println(Arrays.toString(Arrays.copyOfRange(stack, 0, top)));
     }//close print
 
     String printstack() {
