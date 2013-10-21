@@ -1,0 +1,16 @@
+stack
+=====
+
+our stack project
+
+List of Bonuses: 
+randomize
+ascending/descending order
+reverse
+input count //how many of one input is in the stack
+pop all
+pop all starting from a certain point
+peak //look at any position
+pop every other
+replace
+anagram
